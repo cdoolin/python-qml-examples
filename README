@@ -1,0 +1,17 @@
+Configuring QtCreator
+---------------------
+
+These projects contain a .qmlproject file which allows QtCreator to open them as
+projects.  Note the `Files` object added to cause the recognition of `.py` files
+in the project tree.
+
+Normally QtCreator will try and run the qml files with qml-scene.  To get it to
+run the python file instead, open the 'Projects' mode and
+
+1.  Under 'Run', add a new 'Custom Executable' run configuration.
+    Choose your python executable and set the .py file to run in the
+    command line arguments field.
+
+(on Windows)
+2.  Under the 'Run Environment', change the environment from 'Build Environment'
+    to 'System Environment'.  This let's PyQt5 find it's own Qt .dlls properly.
