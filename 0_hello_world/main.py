@@ -10,12 +10,16 @@
 
 import sys
 
-from PyQt5.QtCore import QUrl, QLibraryInfo
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtCore import QUrl
+# need a QGuiApplication for QtQuick to work.  Could
+# also use a QApplication from QtWidgets
+from PyQt5.QtGui import QGuiApplication
+# QQmlApplication makes it easier to load a QML file,  but the
+# QML file needs to put things in a Window object
 from PyQt5.QtQml import QQmlApplicationEngine
 
 
-app = QApplication(sys.argv)
+app = QGuiApplication(sys.argv)
 
 engine = QQmlApplicationEngine()
 engine.load(QUrl("main.qml"))
